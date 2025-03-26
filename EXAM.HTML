@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart Example</title>
+    <style>
+        /* Add some basic styles for better appearance */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cart Container -->
+<div id="cart">
+    <h2>Shopping Cart</h2>
+    <form id="cart-form">
+        <ul id="cart-items"></ul>
+        <input type="submit" value="Checkout">
+    </form>
+</div>
+
+<!-- Product -->
+<div id="product">
+    <h2>Product Name</h2>
+    <p>Product description and details go here.</p>
+    <p>Price: $19.99</p>
+    <!-- Add to Cart Button -->
+    <button onclick="addToCart()">Add to Cart</button>
+</div>
+
+<!-- JavaScript for adding items to the cart -->
+<script>
+    function addToCart() {
+        // Get product details
+        var productName = "Product Name";
+        var productPrice = 19.99;
+
+        // Create a new list item for the cart
+        var cartItem = document.createElement("li");
+        cartItem.textContent = productName + " - $" + productPrice.toFixed(2);
+
+        // Append the item to the cart
+        document.getElementById("cart-items").appendChild(cartItem);
+    }
+
+    // Handle form submission (this is a basic example, in a real scenario, you'd handle this on the server)
+    document.getElementById("cart-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        alert("Checkout functionality would be implemented on the server side in a real application.");
+    });
+</script>
+
+</body>
+</html>
